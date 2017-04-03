@@ -25,9 +25,28 @@ import Cocoa
 import PlaygroundSupport
 
 // Create canvas
-let canvas = Canvas(width: 400, height: 400)
+let canvas = Canvas(width: 490, height: 450)
 
-// Replace this comment and add your code below
+canvas.drawShapesWithFill = false
+canvas.defaultBorderWidth = 10
+canvas.defaultLineWidth = 10
+
+// Create Circles
+
+for x in stride(from: 70, through: 490, by: 70){
+    //Create Black Circles
+     canvas.borderColor = Color.init(hue: 26, saturation: 69, brightness: 37, alpha: 100)
+    canvas.drawEllipse(centreX: x, centreY: 400, width: 60, height: 60)
+    
+    //Create Orange Circles
+   canvas.borderColor = Color.init(hue: 22, saturation: 93, brightness: 90, alpha: 100)
+    canvas.drawEllipse(centreX: x, centreY: 400, width: 40, height: 40)
+    
+    //Create Yeloow Circles
+    canvas.borderColor = Color.init(hue: 53, saturation: 93, brightness: 98, alpha: 100)
+    canvas.drawEllipse(centreX: x, centreY: 400, width: 20, height: 20)
+}
+
 
 /*:
  ## Template code
