@@ -71,11 +71,26 @@ canvas.fillColor = Color.white
 canvas.drawRectangle(bottomLeftX: 0, bottomLeftY: 300, width: 480, height: 100)
 
 //Connect Circles 
+    canvas.defaultLineWidth = 10
 
-//Draw Yellow Line 
-canvas.defaultLineWidth = 10
-canvas.lineColor    = Color.init(hue: 53, saturation: 93, brightness: 98, alpha: 100)
-canvas.drawLine(fromX: 50, fromY: 300, toX: 50, toY: 400)
+for x in stride(from: 40, through: 500, by: 80){
+    
+    //Draw Yellow Line
+    canvas.lineColor = Color.init(hue: 53, saturation: 93, brightness: 98, alpha: 100)
+    canvas.drawLine(fromX: x + 10, fromY: 300, toX: x + 10, toY: 400)
+    canvas.drawLine(fromX: x - 10, fromY: 300, toX: x - 10, toY: 400)
+ 
+    //Draw Redline 
+    canvas.lineColor = Color.init(hue: 22, saturation: 93, brightness: 90, alpha: 100)
+    canvas.drawLine(fromX: x + 20, fromY: 300, toX: x + 20, toY: 400)
+    canvas.drawLine(fromX: x - 20, fromY: 300, toX: x - 20, toY: 400)
+    
+    //Draw Blackline 
+    canvas.lineColor = Color.init(hue: 26, saturation: 69, brightness: 37, alpha: 100)
+    canvas.drawLine(fromX: x + 30, fromY: 300, toX: x + 30, toY: 400)
+    canvas.drawLine(fromX: x - 30, fromY: 300, toX: x - 30, toY: 400)
+}
+
 
 /*:
  ## Template code
